@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * 1, 2, 3 더하기 (https://www.acmicpc.net/status/?user_id=hong&problem_id=9095&from_mine=1)
+ * 1, 2, 3 더하기 (https://www.acmicpc.net/problem/9095)
  *
  */
 public class Problem_9095 {
