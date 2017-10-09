@@ -41,19 +41,16 @@ public class Problem_11053_nlogn {
         System.out.println(length);
     }
 
-    public static int lowerBound(int[] arr, int fromIndex, int toIndex, int key) {
-        int start = fromIndex;
-        int end = toIndex - 1;
+    public static int lowerBound(int[] arr, int start, int end, int target) {
+        while(start < end) {
+            int mid = (start + end) / 2;
 
-        while(start <= end) {
-            int mid = start + (end - start) / 2;
+            int midVal = arr[mid];
 
-            if(arr[mid] < key) {
+            if(midVal < target) {
                 start = mid + 1;
-            } else if(arr[mid] > key) {
-                end = mid - 1;
             } else {
-                return mid;
+                end = mid;
             }
         }
         return start;
