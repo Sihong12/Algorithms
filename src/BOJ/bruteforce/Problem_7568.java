@@ -15,7 +15,7 @@ public class Problem_7568 {
         for(int i=0; i<numOfPeople; i++) {
             StringTokenizer tokens = new StringTokenizer(br.readLine());
             people[i][0] = Integer.parseInt(tokens.nextToken()); // 키
-            people[i][1] = Integer.parseInt(tokens.nextToken()); // 
+            people[i][1] = Integer.parseInt(tokens.nextToken()); // 몸무게
         }
 
         StringBuilder output = new StringBuilder();
