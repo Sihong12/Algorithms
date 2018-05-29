@@ -14,8 +14,8 @@ public class Problem_7568 {
         int[][] people = new int[numOfPeople][2];
         for(int i=0; i<numOfPeople; i++) {
             StringTokenizer tokens = new StringTokenizer(br.readLine());
-            people[i][0] = Integer.parseInt(tokens.nextToken()); // ¸ö¹«°Ô
-            people[i][1] = Integer.parseInt(tokens.nextToken()); // Å°
+            people[i][0] = Integer.parseInt(tokens.nextToken()); // 키
+            people[i][1] = Integer.parseInt(tokens.nextToken()); // 
         }
 
         StringBuilder output = new StringBuilder();
