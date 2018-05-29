@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 /**
- * µ¢Ä¡ (https://www.acmicpc.net/problem/7568)
+ *  (https://www.acmicpc.net/problem/7568)
  */
 public class Problem_7568 {
     public static void main(String[] args) throws IOException {
@@ -14,8 +14,8 @@ public class Problem_7568 {
         int[][] people = new int[numOfPeople][2];
         for(int i=0; i<numOfPeople; i++) {
             StringTokenizer tokens = new StringTokenizer(br.readLine());
-            people[i][0] = Integer.parseInt(tokens.nextToken()); // ¸ö¹«°Ô
-            people[i][1] = Integer.parseInt(tokens.nextToken()); // Å°
+            people[i][0] = Integer.parseInt(tokens.nextToken()); // Â¸Ã¶Â¹Â«Â°Ã”
+            people[i][1] = Integer.parseInt(tokens.nextToken()); // Ã…Â°
         }
 
         StringBuilder output = new StringBuilder();
