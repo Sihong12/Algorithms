@@ -4,6 +4,11 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Count the smiley faces!
+ *
+ * (https://www.codewars.com/kata/583203e6eb35d7980400002a/train/java)
+ */
 public class SmileFaces {
 
 	public static int countSmileys(List<String> arr) {
@@ -18,4 +23,11 @@ public class SmileFaces {
 		}
 		return count;
 	}
+
+	public static int countSmileysByLambda(List<String> arr) {
+		return (int) arr.stream()
+				.filter(face -> face.matches("[\\:;][-~]?[\\)D]"))
+				.count();
+	}
+
 }
