@@ -20,27 +20,34 @@ import java.io.InputStreamReader;
  * n > 1 : Fn = Fn-1 + Fn-2
  */
 public class Problem_1003 {
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int testCase = Integer.parseInt(br.readLine());
-
-        for (int i = 0; i < testCase; i++) {
+        int[] dp = new int[40];
+        dp[0] = 1;
+        dp[1] = 1;
+        for (int t = 0; t < testCase; t++) {
             int n = Integer.parseInt(br.readLine());
-            int[] dp = new int[2];
-            fibonacci(n, dp);
-            System.out.println(dp[0] + " " + dp[1]);
+            if (n == 0) {
+                System.out.println("1 0");
+            } else if (n == 1) {
+                System.out.println("0 1");
+            } else {
+                fibonacci(n, dp);
+                System.out.println(dp[n - 2] + " " + dp[n - 1]);
+            }
         }
     }
 
     public static int fibonacci(int n, int[] dp) {
-        if(n == 0) {
-            dp[0]++;
-            return 0;
-        } else if(n == 1) {
-            dp[1]++;
-            return 1;
+    	if (n <= 2) {
+    	    return dp[n - 1];
+        } else if (dp[n - 1] != 0) {
+    	    return dp[n - 1];
         } else {
-            return fibonacci(n-1, dp) + fibonacci(n-2, dp);
+            dp[n - 1] = fibonacci(n - 1, dp) + fibonacci(n - 2, dp);
+            return dp[n - 1];
         }
     }
 }
