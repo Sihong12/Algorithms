@@ -5,13 +5,11 @@ import java.util.Arrays;
 public class ColoringBook {
 
 	public static void main(String[] args) {
-		Arrays.toString(new Solution().solution(6, 4, new int[][]{
-				{1, 1, 1, 0},
-				{1, 2, 2, 0},
-				{1, 0, 0, 1},
-				{0, 0, 0, 1},
-				{0, 0, 0, 3},
-				{0, 0, 0, 3}}));
+		int[][] picture = new int[100][100];
+		for (int i = 0; i < picture.length; i++) {
+			Arrays.fill(picture[i], (i + 1) % 10);
+		}
+		Arrays.toString(new Solution().solution(100, 100, picture));
 	}
 }
 
@@ -23,12 +21,13 @@ class Solution {
 	public int[] solution(int m, int n, int[][] picture) {
 		int numberOfArea = 0;
 		int maxSizeOfOneArea = 0;
+		int size = 0;
 
 		visited = new boolean[m][n];
 		for (int i = 0; i < m; i++) {
 			for (int j = 0; j < n; j++) {
 				if (picture[i][j] != 0 && !visited[i][j]) {
-					int size = DFS(i, j, picture[i][j], picture);
+					size = DFS(i, j, picture[i][j], picture);
 					maxSizeOfOneArea = Math.max(maxSizeOfOneArea, size);
 					++numberOfArea;
 				}
@@ -38,8 +37,8 @@ class Solution {
 		int[] answer = new int[2];
 		answer[0] = numberOfArea;
 		answer[1] = maxSizeOfOneArea;
-		System.out.println(answer[0]);
-		System.out.println(answer[1]);
+		System.out.println(numberOfArea);
+		System.out.println(maxSizeOfOneArea);
 		return answer;
 	}
 
