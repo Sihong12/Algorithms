@@ -52,4 +52,30 @@ public class BinarySearch {
         }
         return start;
     }
+
+	public static int binarySearch(int[] arr, int target) {
+		int low = 0;
+		int high = arr.length - 1;
+
+		while (low <= high) {
+			int mid = (low + high) / 2;
+
+			if (arr[mid] < target) {
+				low = mid + 1;
+			} else if (arr[mid] > target) {
+				high = mid - 1;
+			} else {
+				return mid;
+			}
+		}
+		return -1;
+	}
+
+	public static int recursiveBinarySearch(int[] arr, int target, int low, int high) {
+		if (high <= low) return -1;
+		int mid = (low + high) / 2;
+		if (arr[mid] < target) return recursiveBinarySearch(arr, mid + 1, high, target);
+		if (arr[mid] > target) return recursiveBinarySearch(arr, low, mid - 1, target);
+		return mid;
+	}
 }
